@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2024 at 03:14 PM
+-- Generation Time: Feb 01, 2024 at 04:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -41,8 +41,30 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `profilepic`, `first_name`, `last_name`, `email`, `bio`) VALUES
-(1, '9e044ea0ed5817381b189680f392bafejpeg', 'iooo', 'ooo', 'haia@gmail.com', 'a'),
-(2, '81a0b34f6849262958dcff549f929fcc.jpg', 'Hai', 'testt', 'toto@gmail.com', 'qwertyukju');
+(1, '9e044ea0ed5817381b189680f392bafejpeg', 'iooo', 'ooo12', 'haia@gmail.com', 'a'),
+(5, 'fb4667cbea0a90ba0147d6cceb110893.jpg', 'iooo', 'testt', 'toto@gmail.com', 'qwertyukju');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_login`
+--
+
+CREATE TABLE `users_login` (
+  `id_user` int(200) NOT NULL,
+  `username` varchar(200) DEFAULT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `passwordss` varchar(200) DEFAULT NULL,
+  `confirm_pw` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users_login`
+--
+
+INSERT INTO `users_login` (`id_user`, `username`, `name`, `email`, `passwordss`, `confirm_pw`) VALUES
+(1, 'tata', 'hai@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 'd41d8cd98f00b204e9800998ecf8427e', NULL);
 
 --
 -- Indexes for dumped tables
@@ -55,6 +77,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users_login`
+--
+ALTER TABLE `users_login`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -62,7 +90,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users_login`
+--
+ALTER TABLE `users_login`
+  MODIFY `id_user` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
